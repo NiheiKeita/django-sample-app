@@ -9,6 +9,8 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    env:
+      POSTGRES_PORT: 5433  # CI環境用のポート番号
     services:
       postgres:
         image: postgres:15
