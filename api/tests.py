@@ -13,7 +13,7 @@ class TaskModelTest(TestCase):
         )
         self.task = Task.objects.create(
             title="Test Task", description="Test Description", created_by=self.user
-        )
+        )  # noqa: E501
 
     def test_task_creation(self):
         self.assertEqual(self.task.title, "Test Task")
@@ -29,7 +29,7 @@ class TaskAPITest(APITestCase):
         self.client.force_authenticate(user=self.user)
         self.task = Task.objects.create(
             title="Test Task", description="Test Description", created_by=self.user
-        )
+        )  # noqa: E501
 
     def test_create_task(self):
         url = reverse("task-list")
