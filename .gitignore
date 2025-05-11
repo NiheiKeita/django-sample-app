@@ -46,4 +46,7 @@ ENV/
 # Testing
 .coverage
 htmlcov/
-.pytest_cache/ 
+.pytest_cache/
+
+# Node Modules
+node_modules/ 
