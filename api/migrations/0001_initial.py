@@ -41,7 +41,7 @@ class Migration(migrations.Migration):
                         max_length=20,
                         verbose_name="状態",
                     ),
-                ),
+                ),  # noqa: E501
                 (
                     "due_date",
                     models.DateField(blank=True, null=True, verbose_name="期限"),
@@ -63,7 +63,7 @@ class Migration(migrations.Migration):
                         related_name="assigned_tasks",
                         to=settings.AUTH_USER_MODEL,
                     ),
-                ),
+                ),  # noqa: E501
                 (
                     "created_by",
                     models.ForeignKey(
@@ -71,7 +71,7 @@ class Migration(migrations.Migration):
                         related_name="created_tasks",
                         to=settings.AUTH_USER_MODEL,
                     ),
-                ),
+                ),  # noqa: E501
             ],
             options={
                 "verbose_name": "タスク",
