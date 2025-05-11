@@ -1,0 +1,7 @@
+#!/bin/sh
+
+echo "Running static analysis..."
+docker compose run --rm -T web black . --check
+docker compose run --rm -T web flake8 .
+docker compose run --rm -T web isort . --check-only
+docker compose run --rm -T web mypy .
