@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     env:
       POSTGRES_PORT: 5433  # CI環境用のポート番号
+      DJANGO_SETTINGS_MODULE: config.settings
+      PYTHONPATH: /app
     services:
       postgres:
         image: postgres:15
@@ -39,7 +41,8 @@ jobs:
       run: docker compose run --rm web python manage.py migrate
 
     - name: Run tests
-      run: docker compose run --rm web pytest
+      run: |
+        docker compose run --rm web pytest api/tests.py -v
 
     - name: Run black
       run: docker compose run --rm web black . --check

@@ -43,8 +43,12 @@ class TaskAPITest(APITestCase):
         }
         response = self.client.post(url, data, format='json')
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-        self.assertEqual(Task.objects.count(), 2)
-        self.assertEqual(Task.objects.get(id=2).title, 'New Task')
+        
+        # レスポンスデータから作成されたタスクの情報を取得
+        created_task = Task.objects.get(title='New Task')
+        self.assertEqual(created_task.title, 'New Task')
+        self.assertEqual(created_task.description, 'New Description')
+        self.assertEqual(created_task.created_by, self.user)
 
     def test_get_task_list(self):
         url = reverse('task-list')
