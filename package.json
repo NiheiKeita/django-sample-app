@@ -1,0 +1,16 @@
+{
+  "name": "django-sample-app",
+  "version": "1.0.0",
+  "description": "このリポジトリは、Django REST Framework・PostgreSQL・Docker・GitHub Actionsを使ったAPI開発のサンプルです。 新人エンジニアでも同じ環境を再現できるよう、セットアップ手順や技術解説をまとめています。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "husky": "^9.1.7"
+  }
+}
